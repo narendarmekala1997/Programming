@@ -22,16 +22,19 @@ package Easy.arrays;
 //Output: 23
 //Explanation: The subarray [5,4,-1,7,8] has the largest sum 23.
 
-public class Maximum_Subarray_53 {
+public class Maximum_Subarray_54_printing {
 
 	public int maxSubArray(int[] nums) {
 		int maxi = Integer.MIN_VALUE;
 		int sum = 0;
+		int start=-1,ansStart=-1,ansEnd=-1;
 		for (int i = 0; i < nums.length; i++) {
-			
+			if(sum==0)start=i;
 			sum += nums[i];
 			if(maxi <sum ) {
 				maxi=sum;
+				ansStart = start;
+				ansEnd = i;
 			}
 			
 			if (sum < 0)
