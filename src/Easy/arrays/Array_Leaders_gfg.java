@@ -22,6 +22,8 @@ public class Array_Leaders_gfg {
 	static ArrayList<Integer> leaders(int n, int arr[]) {
 		// Your code here
 		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		
 
 		int maxi = Integer.MIN_VALUE;
 		for (int i = n - 1; i >= 0; i--) {
