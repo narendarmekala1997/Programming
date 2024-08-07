@@ -1,4 +1,4 @@
-package Easy.arrays;
+package easy.arrays;
 
 //Given an integer array nums, find the 
 //subarray

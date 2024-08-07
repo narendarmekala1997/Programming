@@ -1,4 +1,4 @@
-package Easy.arrays;
+package easy.arrays;
 
 public class Check_if_Array_Is_Sorted_and_Rotated1752 {
 	class Solution {

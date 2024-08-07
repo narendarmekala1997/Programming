@@ -1,4 +1,4 @@
-package Easy.arrays;
+package easy.arrays;
 //Given an array arr, the task is to find the largest element in it.
 class Solution {
     public static int largest(int n, int[] arr) {
