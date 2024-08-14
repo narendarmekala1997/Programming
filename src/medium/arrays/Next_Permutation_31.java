@@ -55,7 +55,6 @@ public class Next_Permutation_31 {
 				break;
 			}
 		}
-		// System.out.println(index);
 		if (index == -1) {
 			reverse(nums, 0, n - 1);
 		} else {
