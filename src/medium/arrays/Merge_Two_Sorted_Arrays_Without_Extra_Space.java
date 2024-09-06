@@ -1,5 +1,7 @@
 package medium.arrays;
 
+import java.util.Arrays;
+
 //Problem statement
 //Given two non-decreasing sorted arrays, ‘A’ and ‘B’, having ‘N’ and ‘M’ elements, respectively.
 //
@@ -45,44 +47,64 @@ public class Merge_Two_Sorted_Arrays_Without_Extra_Space {
 
 	public static void mergeTwoSortedArraysWithoutExtraSpace(long[] a, long[] b) {
 		// Write your code here.
-		long[] arr = new long[a.length + b.length];
-		int left = 0;
-		int right = 0;
-		int j = 0;
-		while (left < a.length && right < b.length) {
-			if (a[left] < b[right]) {
-				arr[j] = a[left];
-				j++;
-				left++;
-			} else {
-				arr[j] = b[right];
-				j++;
-				right++;
-			}
-		}
-		if (left < a.length) {
-			while (left < a.length) {
-				arr[j] = a[left];
-				j++;
-				left++;
-			}
-		}
-		if (right < b.length) {
-			while (right < b.length) {
-				arr[j] = b[right];
-				j++;
-				right++;
-			}
-		}
-		int index = 0;
-		for (int i = 0; i < a.length; i++) {
-			a[i] = arr[index];
-			index++;
-		}
-		for (int i = 0; i < b.length; i++) {
-			b[i] = arr[index];
-			index++;
-		}
+//		long[] arr = new long[a.length + b.length];
+//		int left = 0;
+//		int right = 0;
+//		int j = 0;
+//		while (left < a.length && right < b.length) {
+//			if (a[left] < b[right]) {
+//				arr[j] = a[left];
+//				j++;
+//				left++;
+//			} else {
+//				arr[j] = b[right];
+//				j++;
+//				right++;
+//			}
+//		}
+//		if (left < a.length) {
+//			while (left < a.length) {
+//				arr[j] = a[left];
+//				j++;
+//				left++;
+//			}
+//		}
+//		if (right < b.length) {
+//			while (right < b.length) {
+//				arr[j] = b[right];
+//				j++;
+//				right++;
+//			}
+//		}
+//		int index = 0;
+//		for (int i = 0; i < a.length; i++) {
+//			a[i] = arr[index];
+//			index++;
+//		}
+//		for (int i = 0; i < b.length; i++) {
+//			b[i] = arr[index];
+//			index++;
+//		}
+		//without using Extra space
+		int m=a.length;
+        int n=b.length;
+        int left = m-1;
+        int right = 0;
+
+        while( left>=0 && right < n ){
+            if( a[left] > b[right] ){
+                long temp = a[left];
+                a[left] = b[right];
+                b[right]=temp;
+                left--;
+                right++;
+            }
+            else{
+                break;
+            }
+        }
+        Arrays.sort(a);
+        Arrays.sort(b);
 	}
 
 }
